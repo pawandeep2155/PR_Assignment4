@@ -15,7 +15,7 @@ using namespace std;
 #include "hmm.h"
 #include "random.h"
 
-main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
   // check args
   if (argc < 4) {

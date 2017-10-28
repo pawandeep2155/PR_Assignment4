@@ -11,7 +11,7 @@ using namespace std;
 #include <string.h>
 #include "hmm.h"
 
-main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
   // check args
   if (argc < 3) {

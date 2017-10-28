@@ -1,23 +1,20 @@
-%% Load handwritting data of 3 characters.
+%% Set Training Data in terms of x,y cordinates.
 data = [];
 
-% ai data
+% % ai data
 data_ai = dlmread('ai.ldf');
 training_rows = uint16(0.7 * size(data_ai,1));
-data_ai = data_ai(1:training_rows,:);
+data_ai = data_ai(training_rows+1:size(data_ai,1),2:size(data_ai,2));
 
-% la data 
+% % la data 
 data_la = dlmread('lA.ldf');
 training_rows = uint16(0.7 * size(data_la,1));
-data_la = data_la(1:training_rows,:);
+data_la = data_la(training_rows+1:size(data_la,1),2:size(data_la,2));
 
-% ta data 
+% % ta data 
 data_ta = dlmread('tA.ldf');
 training_rows = uint16(0.7 * size(data_ta,1));
-data_ta = data_ta(1:training_rows,:);
-
-%% Set number of clusters
-num_of_clusters = 6;
+data_ta = data_ta(training_rows+1:size(data_ta,1),2:size(data_ta,2));
 
 %% Concatenate all the data
 for i=1:size(data_ai,1)
@@ -82,3 +79,5 @@ for i=1:size(data_ta,1)
     data = [data;temp];
     
 end
+
+
